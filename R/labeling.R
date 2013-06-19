@@ -3,8 +3,8 @@
 #' \tabular{ll}{
 #' Package: \tab labeling\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1\cr
-#' Date: \tab 2010-09-01\cr
+#' Version: \tab 0.2\cr
+#' Date: \tab 2011-04-01\cr
 #' License: \tab Unlimited\cr
 #' LazyLoad: \tab yes\cr
 #' }
@@ -36,7 +36,10 @@
 #' y <- iris$Sepal.Length
 #' xl <- extended(min(x), max(x), 6)
 #' yl <- extended(min(y), max(y), 6)
-#' plot(x, y, xlim=c(min(x,xl),max(x,xl)), ylim=c(min(y,yl),max(y,yl)), axes=FALSE, main="Extended labeling")
+#' plot(x, y, 
+#'     xlim=c(min(x,xl),max(x,xl)), 
+#'     ylim=c(min(y,yl),max(y,yl)), 
+#'     axes=FALSE, main="Extended labeling")
 #' axis(1, at=xl)
 #' axis(2, at=yl)
 c()
@@ -52,6 +55,7 @@ c()
 #' @references
 #' Heckbert, P. S. (1990) Nice numbers for graph labels, Graphics Gems I, Academic Press Professional, Inc.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 heckbert <- function(dmin, dmax, m)
 {
     range <- .heckbert.nicenum((dmax-dmin), FALSE)
@@ -110,6 +114,7 @@ heckbert <- function(dmin, dmax, m)
 #' @references
 #' Wilkinson, L. (2005) The Grammar of Graphics, Springer-Verlag New York, Inc.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 wilkinson <-function(dmin, dmax, m, Q = c(1,5,2,2.5,3,4,1.5,7,6,8,9), mincoverage = 0.8, mrange=max(floor(m/2),2):ceiling(6*m))
 {
 	best <- NULL
@@ -255,6 +260,7 @@ wilkinson <-function(dmin, dmax, m, Q = c(1,5,2,2.5,3,4,1.5,7,6,8,9), mincoverag
 #' @references
 #' Talbot, J., Lin, S., Hanrahan, P. (2010) An Extension of Wilkinson's Algorithm for Positioning Tick Labels on Axes, InfoVis 2010.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 extended <- function(dmin, dmax, m, Q=c(1,5,2,2.5,4,3), only.loose=FALSE, w=c(0.25,0.2,0.5,0.05))
 {
 	eps <- .Machine$double.eps * 100
@@ -364,6 +370,7 @@ extended <- function(dmin, dmax, m, Q=c(1,5,2,2.5,4,3), only.loose=FALSE, w=c(0.
 #' @references
 #' Talbot, J., Lin, S., Hanrahan, P. (2010) An Extension of Wilkinson's Algorithm for Positioning Tick Labels on Axes, InfoVis 2010.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 extended.figures <- function(samples = 100)
 {
 	oldpar <- par()
@@ -436,6 +443,7 @@ extended.figures <- function(samples = 100)
 #' @references
 #' Nelder, J. A. (1976) AS 96. A Simple Algorithm for Scaling Graphs, Journal of the Royal Statistical Society. Series C., pp. 94-96.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 nelder <- function(dmin, dmax, m, Q = c(1,1.2,1.6,2,2.5,3,4,5,6,8,10))
 {
 	ntick <- floor(m)
@@ -503,6 +511,7 @@ nelder <- function(dmin, dmax, m, Q = c(1,1.2,1.6,2,2.5,3,4,5,6,8,10))
 #' @references
 #' Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) \emph{The New S Language}. Wadsworth & Brooks/Cole.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 rpretty <- function(dmin, dmax, m=6, n=floor(m)-1, min.n=n%/%3, shrink.sml = 0.75, high.u.bias=1.5, u5.bias=0.5 + 1.5*high.u.bias)
 {
 	ndiv <- n
@@ -604,6 +613,7 @@ rpretty <- function(dmin, dmax, m=6, n=floor(m)-1, min.n=n%/%3, shrink.sml = 0.7
 #' @references
 #' \url{http://matplotlib.sourceforge.net/}
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 matplotlib <- function(dmin, dmax, m)
 {
 	steps <- c(1,2,5,10)
@@ -688,6 +698,7 @@ matplotlib <- function(dmin, dmax, m)
 #' @references
 #' \url{http://www.gnuplot.info/}
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 gnuplot <- function(dmin, dmax, m)
 {
 	ntick <- floor(m)
@@ -728,6 +739,7 @@ gnuplot <- function(dmin, dmax, m)
 #' @references
 #' Sparks, D. N. (1971) AS 44. Scatter Diagram Plotting, Journal of the Royal Statistical Society. Series C., pp. 327-331.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 sparks <- function(dmin, dmax, m)
 {
 	fm <- m-1
@@ -786,6 +798,7 @@ sparks <- function(dmin, dmax, m)
 #' @references
 #' Thayer, R. P. and Storer, R. F. (1969) AS 21. Scale Selection for Computer Plots, Journal of the Royal Statistical Society. Series C., pp. 206-208.
 #' @author Justin Talbot \email{jtalbot@@stanford.edu}
+#' @export
 thayer <- function(dmin, dmax, m)
 {
 	r <- dmax-dmin
