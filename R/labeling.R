@@ -722,8 +722,8 @@ gnuplot <- function(dmin, dmax, m)
 		t <- ceiling(norm_range)
 
 	d <- t*power
-	graphmin <- floor(min/d) * d
-	graphmax <- ceiling(max/d) * d
+	graphmin <- floor(dmin/d) * d
+	graphmax <- ceiling(dmax/d) * d
 
 	seq(from=graphmin, to=graphmax, by=d)
 }
