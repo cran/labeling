@@ -21,6 +21,6 @@
   Justin Talbot \email{justintalbot@gmail.com}
 }
 \references{
-  \url{http://matplotlib.sourceforge.net/}
+  \url{https://matplotlib.org/}
 }
 

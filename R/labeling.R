@@ -276,6 +276,12 @@ extended <- function(dmin, dmax, m, Q=c(1,5,2,2.5,4,3), only.loose=FALSE, w=c(0.
 		#let seq generate some equally spaced steps.
 		return(seq(from=dmin, to=dmax, length.out=m))
 	}
+	
+	if((dmax - dmin) > sqrt(.Machine$double.xmax)) {
+    #if the range is too large
+    #let seq generate some equally spaced steps.
+    return(seq(from=dmin, to=dmax, length.out=m))
+  }
 
 	n <- length(Q)
 
