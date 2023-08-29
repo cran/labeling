@@ -1,4 +1,4 @@
-d115c8a3e239785d205b578c426dcfce *DESCRIPTION
+0d676963d4cf06c130b1a22abac30026 *DESCRIPTION
 49dfd2fcac5796c41bd50d456a20748c *LICENSE
 9805d96baa3b7ce54520984efb40d605 *NAMESPACE
 b31c419155b5e7c5a47d54dbb5044593 *R/labeling.R
@@ -7,7 +7,7 @@ ae9878d2bf2b36dcd46519d03b20ecc6 *man/extended.Rd
 a746fc58521fbf463fa0971baff1a08c *man/gnuplot.Rd
 a15dea9c41074a26efc5b98e9be172d1 *man/heckbert.Rd
 8f14a4ae6d1fab41341bd757ca9a352a *man/labeling-internal.Rd
-26a616fa6235906c41483359fe7b274a *man/labeling-package.Rd
+5ab3f28ce03d435af839d42b1bbc6cad *man/labeling-package.Rd
 16fc20daa4f9f2a29845f57a248ea0b6 *man/matplotlib.Rd
 cf22083f67682e2a7e4c981bad0a5e6b *man/nelder.Rd
 3b2f6e255249c0f330519970f240d53a *man/rpretty.Rd
